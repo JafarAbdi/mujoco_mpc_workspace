@@ -1,0 +1,34 @@
+[project]
+authors = ["JafarAbdi <jafar.uruc@gmail.com>"]
+channels = ["conda-forge"]
+description = "Add a short description here"
+name = "mujoco_mpc_workspace"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[target.unix.activation.env]
+CMAKE_INSTALL_PREFIX = "$CONDA_PREFIX"
+
+[tasks]
+configure = { cmd = [
+  "cmake",
+  "-GNinja",
+  "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
+  # "-DCMAKE_BUILD_TYPE=Release", This is segfaulting
+  "-DCMAKE_BUILD_TYPE=RelWithDebugInfo",
+  "-DMJPC_USE_SYSTEM_GLFW=ON",
+  "-DMUJOCO_SIMULATE_USE_SYSTEM_GLFW=ON",
+  "-S",
+  "mujoco_mpc/",
+  "-B",
+  ".build/",
+] }
+build = { cmd = "cmake --build .build/", depends_on = ["configure"] }
+install = { cmd = "cmake --install .build/", depends_on = ["build"] }
+
+
+[dependencies]
+ninja = ">=1.12.1,<2"
+glfw = ">=3.4,<4"
+cmake = "3.22.*"
+lld = ">=18.1.7,<19"
