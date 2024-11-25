@@ -28,7 +28,8 @@ install = { cmd = "cmake --install .build/", depends_on = ["build"] }
 
 
 [dependencies]
-ninja = ">=1.12.1,<2"
 glfw = ">=3.4,<4"
+
+[host-dependencies]
+ninja = ">=1.12.1,<2"
 cmake = "3.22.*"
-lld = ">=18.1.7,<19"

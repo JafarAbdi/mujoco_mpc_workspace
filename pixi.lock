@@ -25,7 +25,6 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/linux-64/libgcc-ng-14.2.0-h69a702a_1.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/libgomp-14.2.0-h77fa898_1.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/libiconv-1.17-hd590300_2.conda
-      - conda: https://conda.anaconda.org/conda-forge/linux-64/libllvm18-18.1.7-hb77312f_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/libnghttp2-1.58.0-h47da74e_1.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/libssh2-1.11.0-h0841786_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/libstdcxx-14.2.0-hc0a3c3a_1.conda
@@ -35,7 +34,6 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/linux-64/libxkbcommon-1.7.0-h2c5496b_1.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/libxml2-2.12.7-hc051c1a_1.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/libzlib-1.2.13-h4ab18f5_6.conda
-      - conda: https://conda.anaconda.org/conda-forge/linux-64/lld-18.1.7-h67e2958_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/ncurses-6.5-he02047a_1.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/ninja-1.12.1-h297d8ca_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/openssl-3.3.2-hb9d3cd8_0.conda
@@ -377,24 +375,6 @@ packages:
   size: 705775
   timestamp: 1702682170569
 - kind: conda
-  name: libllvm18
-  version: 18.1.7
-  build: hb77312f_0
-  subdir: linux-64
-  url: https://conda.anaconda.org/conda-forge/linux-64/libllvm18-18.1.7-hb77312f_0.conda
-  sha256: 9a9167b3e8e05abc517671fe45e5d40ae866d3e8195865ddad3c68131d059e25
-  md5: bc0ea7e1f75a9b1c8467597fbbd9f86b
-  depends:
-  - libgcc-ng >=12
-  - libstdcxx-ng >=12
-  - libxml2 >=2.12.7,<3.0a0
-  - libzlib >=1.2.13,<2.0a0
-  - zstd >=1.5.6,<1.6.0a0
-  license: Apache-2.0 WITH LLVM-exception
-  license_family: Apache
-  size: 38423980
-  timestamp: 1717781615068
-- kind: conda
   name: libnghttp2
   version: 1.58.0
   build: h47da74e_1
@@ -550,26 +530,6 @@ packages:
   license_family: Other
   size: 61571
   timestamp: 1716874066944
-- kind: conda
-  name: lld
-  version: 18.1.7
-  build: h67e2958_0
-  subdir: linux-64
-  url: https://conda.anaconda.org/conda-forge/linux-64/lld-18.1.7-h67e2958_0.conda
-  sha256: d401747935704f2ac7148e42bb22b7b3509a83575a6a4f4ba95de62a58dc08fa
-  md5: 8219ef46f2b99b09f4756864df8194e7
-  depends:
-  - libgcc-ng >=12
-  - libllvm18 >=18.1.7,<18.2.0a0
-  - libstdcxx-ng >=12
-  - libzlib >=1.2.13,<2.0a0
-  - zstd >=1.5.6,<1.6.0a0
-  constrains:
-  - llvm ==18.1.7
-  license: Apache-2.0 WITH LLVM-exception
-  license_family: APACHE
-  size: 5467212
-  timestamp: 1717800149067
 - kind: conda
   name: ncurses
   version: '6.5'
